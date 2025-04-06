@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отправка данных</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Отправка данных</h1>
+    <form id="myForm" method="POST" action="/">
+        <label for="login">Логин Moodle:</label><br>
+        <input type="text" id="login" name="login" required><br><br>
+        <label for="time">Текущее время:</label><br>
+        <input type="text" id="time" name="time" readonly><br><br>
+        <button type="submit">Отправить</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+            document.getElementById("time").value = formattedTime;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Предотвратить отправку формы по умолчанию
+
+            const form = event.target; // Получаем форму
+            const formData = new URLSearchParams(new FormData(form)); // Сериализуем данные формы
+
+            fetch("/", {  // POST запрос к тому же адресу
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded' // Важно
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("message").innerText = "Данные успешно сохранены!";  // Отображаем сообщение
+                } else {
+                    document.getElementById("message").innerText = "Ошибка при отправке данных!";
+                }
+            })
+            .catch(error => {
+                console.error("Ошибка:", error);
+                document.getElementById("message").innerText = "Произошла ошибка при отправке данных.";
+            });
+        });
+    </script>
+</body>
+</html>
