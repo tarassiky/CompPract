@@ -9,3 +9,6 @@
 Вывод логина:
 
 ![image](https://github.com/user-attachments/assets/15b800f1-0b03-4813-9f93-420dbf5beb92)
+
+Через Replit:
+
