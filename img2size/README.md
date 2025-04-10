@@ -12,3 +12,12 @@
 
 Через Replit:
 
+![image](https://github.com/user-attachments/assets/19c22d5f-4559-419a-b252-7215a7440091)
+
+![image](https://github.com/user-attachments/assets/56f2ed3b-5c40-46d9-9024-51b975340e95)
+
+![image](https://github.com/user-attachments/assets/02559074-20ef-49c9-b98f-fb01264b1d35)
+
+Ссылка: 
+
+https://d524d5bc-3d3c-44db-aefe-25713af87568-00-vuvglvn6a6e1.sisko.replit.dev/
