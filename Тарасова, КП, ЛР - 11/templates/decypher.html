@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decryption</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Decryption</h1>
+    <form id="decypherForm" method="POST" enctype="multipart/form-data">
+        <label for="key">Private Key (PEM):</label><br>
+        <input type="file" id="key" name="key" required><br><br>
+        <label for="secret">Encrypted Data (Binary File):</label><br>
+        <input type="file" id="secret" name="secret" required><br><br>
+        <button type="button" onclick="decryptFile()">Decrypt</button>
+    </form>
+    <div id="result"></div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
